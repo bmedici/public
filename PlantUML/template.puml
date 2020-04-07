@@ -3,21 +3,40 @@
 ' !includeurl https://raw.githubusercontent.com/bmedici/public/master/PlantUML/style-03.puml
 !include style-03.puml
 
-' Title: UC #3 - Chargebee activity
+show unlinked
+title <&caret-left> Saple PlantUML diagram w/Bruno's styling <&caret-left>
 
-group Group 1
+group Customer adjusts bundle contents to its needs
   Customer->Site: increases quantity of P2
   Site<->PIM: exchange prices
   Customer<-Site: updates Cart view and prices
 end
 
-Site->Core: Validates customer subscription
-note right: Stores customer subscription
-Core->Sync: Push "customer.subscription.created"
-note right: Stores for processing
+activate Site
+
+  Site->CoreCustomer: Validates customer subscription
+  note right: Stores customer subscription
+
+  activate CoreCustomer
+    CoreCustomer->MessageQueue: <&envelope-closed> customer.subscription.created
+    activate MessageQueue
+      note right: Stores for processing
+      CoreCustomer<--MessageQueue: ACK
+    deactivate MessageQueue
+  deactivate CoreCustomer
+  Site<--CoreCustomer: ACK
+deactivate Site
+
+activate MessageQueue
+  ' note right: Stores for processing
+  MessageQueue->Chargebee: Push Subscrption object update
+  note right: Process message
+deactivate MessageQueue
 
 
-note right: Process message
-Sync->Chargbee: Push Subscrption object update
+
+' MessageQueue->MessageQueue: <&envelope-open> Process message
+' note right: Process message
+
 
 @enduml
