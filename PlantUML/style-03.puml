@@ -1,0 +1,39 @@
+@startuml styles
+
+' DEFAULTS
+skinparam monochrome false
+skinparam backgroundColor #F6F6F6
+skinparam handwritten false
+' skinparam defaultFontName "Calibri"
+' skinparam defaultTextAlignment center
+
+' STYLES
+skinparam participant {
+  StereotypeFontSize 12
+  FontColor black
+  ' BackgroundColor #073B6F
+  BorderColor #EEEEEE
+  shadowing true
+  ' RoundCorner 20
+}
+
+skinparam Arrow {
+  Color #666666
+  FontColor #666666
+  FontSize 12
+}
+
+' PARTICIPANTS
+hide unlinked
+actor Customer
+participant Site #pink
+participant PIM #pink
+participant CoreCustomer #cyan
+participant CoreProduct #cyan
+participant CoreLogistics #cyan
+database MessageQueue
+participant ChargeBee #orange
+participant Stripe #orange
+participant FuturLog  #orange
+
+@enduml
