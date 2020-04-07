@@ -4,7 +4,7 @@
 !include style-03.puml
 
 show unlinked
-title <&caret-left> Saple PlantUML diagram w/Bruno's styling <&caret-left>
+title <&caret-left> Sample PlantUML diagram w/Bruno's styling <&caret-left>
 
 group Customer adjusts bundle contents to its needs
   Customer->Site: increases quantity of P2
