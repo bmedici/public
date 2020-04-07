@@ -1,0 +1,22 @@
+@startuml
+
+!includeurl https://raw.githubusercontent.com/bmedici/public/master/PlantUML/style.puml
+
+' Title: UC #3 - Chargebee activity
+
+group Group 1
+  Customer->Site: increases quantity of P2
+  Site<->PIM: exchange prices
+  Customer<-Site: updates Cart view and prices
+end
+
+Site->Core: Validates customer subscription
+note right: Stores customer subscription
+Core->Sync: Push "customer.subscription.created"
+note right: Stores for processing
+
+
+note right: Process message
+Sync->Chargbee: Push Subscrption object update
+
+@enduml
