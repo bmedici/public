@@ -1,0 +1,38 @@
+@startuml styles
+
+' DEFAULTS
+skinparam monochrome false
+skinparam backgroundColor #F6F6F6
+skinparam handwritten false
+skinparam defaultFontName "Verdana"
+' skinparam defaultTextAlignment center
+
+' STYLES
+skinparam participant {
+  StereotypeFontSize 12
+  FontColor black
+  ' BackgroundColor #073B6F
+  BorderColor #EEEEEE
+  shadowing true
+}
+
+skinparam Arrow {
+  Color #666666
+  FontColor #666666
+  FontSize 12
+}
+
+' PARTICIPANTS
+hide unlinked
+actor Customer
+participant Site #pink
+participant PIM #pink
+participant CoreCustomer #cyan
+participant CoreProduct #cyan
+participant CoreLogistics #cyan
+database MessageQueue as MQ
+participant ChargeBee as CB #orange
+participant Stripe #orange
+participant FuturLog as FL #orange
+
+@enduml
