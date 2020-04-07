@@ -10,9 +10,10 @@ skinparam handwritten false
 ' STYLES
 skinparam participant {
   StereotypeFontSize 12
-  FontColor black
+  BackgroundColor #555555
+  FontColor white
   ' BackgroundColor #073B6F
-  BorderColor #EEEEEE
+  BorderColor #888888
   shadowing true
   ' RoundCorner 20
 }
@@ -26,14 +27,14 @@ skinparam Arrow {
 ' PARTICIPANTS
 hide unlinked
 actor Customer
-participant Site #pink
-participant PIM #pink
-participant CoreCustomer #cyan
-participant CoreProduct #cyan
-participant CoreLogistics #cyan
+participant Site #purple
+participant PIM #purple
+participant CoreCustomer #navy
+participant CoreProduct #navy
+participant CoreLogistics #navy
 database MessageQueue
-participant ChargeBee #orange
-participant Stripe #orange
-participant FuturLog  #orange
+participant Chargebee #darkgreen
+participant Stripe #darkgreen
+participant FuturLog  #darkgreen
 
 @enduml
