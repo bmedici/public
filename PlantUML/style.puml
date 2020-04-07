@@ -1,1 +1,15 @@
-skinparam monochrome true
+skinparam monochrome false
+
+hide unlinked
+
+actor Customer
+participant Site #pink
+participant PIM #pink
+participant CoreCustomer #cyan
+participant CoreProduct #cyan
+participant CoreLogistics #cyan
+database MessageQueue as MQ
+participant ChargeBee as CB #orange
+participant Stripe #orange
+participant FuturLog as FL #orange
+
