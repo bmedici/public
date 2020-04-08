@@ -19,11 +19,21 @@ skinparam participant {
   ' RoundCorner 20
 }
 
+skinparam Note {
+  BackgroundColor LightSteelBlue
+  Color green
+  FontColor black
+  BorderColor grey
+  FontSize 14
+}
+
 skinparam Arrow {
   Color #666666
   FontColor #666666
   FontSize 12
 }
+
+
 
 ' PARTICIPANTS
 hide unlinked
