@@ -1,7 +1,7 @@
 @startuml
 
-' !includeurl https://raw.githubusercontent.com/bmedici/public/master/PlantUML/style-03.puml
-!include style-03.puml
+' !includeurl https://raw.githubusercontent.com/bmedici/public/master/PlantUML/style.puml?04
+!include style.puml
 
 show unlinked
 title <&caret-left> Sample PlantUML diagram w/Bruno's styling <&caret-left>
@@ -11,6 +11,8 @@ group Customer adjusts bundle contents to its needs
   Site<->PIM: exchange prices
   Customer<-Site: updates Cart view and prices
 end
+
+
 
 activate Site
 
