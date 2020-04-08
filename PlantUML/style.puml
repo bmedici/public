@@ -35,8 +35,8 @@ participant CoreProduct #navy
 participant CoreLogistics #navy
 
 participant CoreLogistics #navy
-participant MessageQueue #maroon
-participant NotificationEndpoint #maroon
+participant MessageQueue #dimgrey
+participant NotificationEndpoint #dimgrey
 
 participant Chargebee #darkgreen
 participant Stripe #darkgreen
